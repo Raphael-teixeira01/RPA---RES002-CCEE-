@@ -22,14 +22,7 @@ print(f"""
 """)
 
 async def run():
-        # '''
-        # 1
-        # ======================================================================================
-        # ESSA PARTE DO CÓDIGO É RESPONSÁVEL POR INICIAR ALL O PROCESSO, IRÁ ABRIR O GOOGLE,
-        # POR SUAS INFORMAÇÕES DE LOGIN E SENHA E CLICAR NO CAMPO DO BOTÃO QUE FAZ A SOLICITAÇÃO
-        # DO CÓFIGO PARA ACESSAR O SITE.
-        # ======================================================================================
-        # '''
+
     async with async_playwright() as p:
         
         data_atual = datetime.datetime.now()
@@ -52,12 +45,7 @@ async def run():
         
         await page.get_by_role("button", name="Email").click()
         
-        '''
-        2
-        ===================================================================================
-        ESSA PARTE DO CÓDIGO PEGA O CÓDIGO NO E-MAIL E COLOCA NO CAMPO PARA ACESSAR A CCEE
-        ===================================================================================
-        '''
+
         async def obter_codigo_autorizacao():
             outlook = win32com.client.Dispatch("Outlook.Application").GetNamespace("MAPI")
             inbox = outlook.GetDefaultFolder(6)  # "6" refere-se ao índice da caixa de entrada
@@ -84,15 +72,6 @@ async def run():
                     print("Red")
                     break
                 
-                
-                
-        '''
-        3
-        ===================================================================================
-        ESSA PARTE DO CÓDIGO IRÁ PERCORRER A PÁGINA E CLICAR NOS DEMAIS CAMPOS, ATÉ CHEGAR 
-        A PARTE DO DOWLOAD QUE FICA DENTRO DE UM LOOP
-        ===================================================================================
-        '''
         
         await obter_codigo_autorizacao()
         
