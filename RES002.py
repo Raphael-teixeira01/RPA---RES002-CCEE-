@@ -46,8 +46,8 @@ async def run():
 
         await page.goto('https://operacao.ccee.org.br/ui/home')  # Navegue até a página desejada
         # Substitua 'seletor' pelo seletor CSS do elemento
-        await page.locator('#mat-input-0').fill('raphael01') # INSIRA SEU LOGIN 
-        await page.locator("#INPUT").fill('X9GGC98gqv@') # INSIRA SUA SENHA
+        await page.locator('#mat-input-0').fill('') # INSIRA SEU LOGIN 
+        await page.locator("#INPUT").fill('') # INSIRA SUA SENHA
         await page.get_by_role("button", name="Entrar").click()
         
         await page.get_by_role("button", name="Email").click()
